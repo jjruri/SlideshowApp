@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,18 +29,18 @@
                                     <outletCollection property="gestureRecognizers" destination="CCG-Fo-EAT" appends="YES" id="WHF-Mu-E2r"/>
                                 </connections>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-t7-HnO">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-t7-HnO">
                                 <rect key="frame" x="50" y="264" width="314" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRw-tN-DIY">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="30"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDl-MH-Of6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-ap-Q5r">
-                                        <rect key="frame" x="124" y="0.0" width="66" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-ap-Q5r">
+                                        <rect key="frame" x="107.5" y="0.0" width="99" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="再生/停止"/>
                                         <connections>
@@ -47,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-hr-bOp">
-                                        <rect key="frame" x="248" y="0.0" width="66" height="30"/>
+                                        <rect key="frame" x="214.5" y="0.0" width="99.5" height="30"/>
                                         <state key="normal" title="進む"/>
                                         <connections>
                                             <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufO-Ti-zvc"/>

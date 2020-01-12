@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         slideskip(a: 0)
-        //autobutton.setTitle("再生/停止", for: .normal)
+        autobutton.setTitle("再生/停止", for: .normal)
     }
 
     
