@@ -15,14 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-Re-PTJ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-Re-PTJ">
                                 <rect key="frame" x="50" y="64" width="314" height="150"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="MM1-EY-xsX"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="CCG-Fo-EAT" appends="YES" id="yG4-Hg-6SG"/>
+                                    <outletCollection property="gestureRecognizers" destination="CCG-Fo-EAT" appends="YES" id="WHF-Mu-E2r"/>
                                 </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-t7-HnO">
@@ -73,7 +76,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CCG-Fo-EAT">
                     <connections>
-                        <segue destination="mT9-SK-G10" kind="show" id="afU-0d-Ay7"/>
+                        <action selector="tapImage:" destination="BYZ-38-t0r" id="vQj-ed-EON"/>
+                        <segue destination="mT9-SK-G10" kind="show" id="1JM-SH-9JE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -93,12 +97,21 @@
                                     <constraint firstAttribute="height" constant="600" id="c2r-fY-4ul"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-wX-uq2">
+                                <rect key="frame" x="191.5" y="625" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="jGm-m2-jRS" kind="unwind" unwindAction="unwind:" id="QYj-sN-O0g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="SAf-BA-KUR" firstAttribute="leading" secondItem="V6k-kb-xRR" secondAttribute="leading" id="8G1-Re-yB7"/>
                             <constraint firstItem="V6k-kb-xRR" firstAttribute="trailing" secondItem="SAf-BA-KUR" secondAttribute="trailing" id="9sH-6U-EJN"/>
+                            <constraint firstItem="EPu-wX-uq2" firstAttribute="centerX" secondItem="RqD-Ev-Kg0" secondAttribute="centerX" id="SiS-H3-1SX"/>
                             <constraint firstItem="SAf-BA-KUR" firstAttribute="top" secondItem="V6k-kb-xRR" secondAttribute="top" constant="20" id="ctl-QO-9q0"/>
+                            <constraint firstItem="EPu-wX-uq2" firstAttribute="top" secondItem="SAf-BA-KUR" secondAttribute="bottom" constant="5" id="pa7-NG-dmN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V6k-kb-xRR"/>
                     </view>
@@ -108,6 +121,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MK-oR-Jt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jGm-m2-jRS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="961" y="113"/>
         </scene>

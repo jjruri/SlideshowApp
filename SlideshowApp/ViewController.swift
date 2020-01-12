@@ -99,18 +99,20 @@ class ViewController: UIViewController {
     
     //画像をタップした時の挙動をつくる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectimage: imageViewController = segue.destination as! imageViewController
+        let selectimage : imageViewController = segue.destination as! imageViewController
         selectimage.slidenum2 = slidenum
-     if timer == nil {
-     }
-     else {
-         timer.invalidate()
-         timer = nil
-         autobutton.setTitle("再生", for: .normal)
-         bkbutton.isEnabled = true
-         fwbutton.isEnabled = true
-     }
-     }
-
+        if timer == nil {}
+            else {
+                timer.invalidate()
+                timer = nil
+            autobutton.setTitle("再生", for: .normal)
+            bkbutton.isEnabled = true
+            fwbutton.isEnabled = true
+            }
+        }
+    
+    //戻るボタンの実装
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
 }
 
