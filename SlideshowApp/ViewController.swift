@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     var slidenum:Int = 0
     let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
     
-    
     //スライド用メソッドを用意
     func slideskip(a:Int){
         slidenum = a
@@ -44,7 +43,7 @@ class ViewController: UIViewController {
     }
 
     
-    //進むボタンを設定する
+    //進むボタンを実装する
     @IBAction func next(_ sender: UIButton) {
         if slidenum == slidestate.count - 1  {
             slideskip(a: 0)
