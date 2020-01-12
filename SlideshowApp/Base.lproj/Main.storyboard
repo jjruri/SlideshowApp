@@ -32,6 +32,9 @@
                                         <rect key="frame" x="124" y="0.0" width="66" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="再生/停止"/>
+                                        <connections>
+                                            <action selector="autostop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nd0-z5-rlA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-hr-bOp">
                                         <rect key="frame" x="248" y="0.0" width="66" height="30"/>
@@ -52,9 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="autobutton" destination="FQF-ap-Q5r" id="WW8-HW-pqo"/>
                         <outlet property="bkbutton" destination="yRw-tN-DIY" id="Nki-H4-xEm"/>
-                        <outlet property="fwbutton" destination="g6D-hr-bOp" id="f5O-Lt-Mft"/>
                         <outlet property="imagespace" destination="XkV-Re-PTJ" id="3iF-br-GvP"/>
                     </connections>
                 </viewController>

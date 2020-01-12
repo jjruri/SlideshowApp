@@ -13,18 +13,87 @@ class ViewController: UIViewController {
     //画像領域を設定する
     @IBOutlet weak var imagespace: UIImageView!
     
-    // ボタンを接続
+    // タップでボタンの制御をするためにボタンをoutlet接続しとく
     @IBOutlet weak var bkbutton: UIButton!
     @IBOutlet weak var autobutton: UIButton!
     @IBOutlet weak var fwbutton: UIButton!
     
+    //スライド用変数を用意
+    var slidenum:Int = 0
+    let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
     
     
+    //スライド用メソッドを用意
+    func slideskip(a:Int){
+        slidenum = a
+        imagespace.image = slidestate[slidenum]
+    }
+    
+    func slide(b:Int){
+        slidenum = slidenum + b
+        imagespace.image = slidestate[slidenum]
+    }
+    
+    
+    //ロード時に初期値を入れる
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        slideskip(a: 0)
+        autobutton.setTitle("再生/停止", for: .normal)
     }
 
+    
+    //進むボタンを設定する
+    @IBAction func nextimg(_ sender: UIButton) {
+        if slidenum == slidestate.count - 1  {
+            slideskip(a: 0)
+        }
+        else {
+            slide(b: 1)
+        }
+    }
+    
+    @IBAction func bkimg(_ sender: UIButton) {
+        if slidenum == 0 {
+            slidenum = slidestate.count - 1
+            imagespace.image = slidestate[slidenum]
+        }
+        else {
+            slide(b: -1)
+        }
+    }
+    
+    //自動再生停止ボタン用のタイマーを用意する
+       var timer: Timer!
+       
+       //２秒に一度呼び出される自動スライド用のfuncを先につくる
+       @objc func autoslide(_timer:Timer){
+           if slidenum == slidestate.count - 1 {
+               slideskip(a: 0)
+           }
+           else  {
+               slide(b: 1)
+           }
+       }
 
+       //自動再生/停止が押された時の設定
+    @IBAction func autostop(_ sender: UIButton) {
+        if timer == nil {
+            self.timer =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(autoslide(_timer:)), userInfo: nil, repeats: true)
+            sender.setTitle("停止", for: .normal)
+            bkbutton.isEnabled = false
+            fwbutton.isEnabled = false
+        }
+        else {
+            self.timer.invalidate()
+            timer = nil
+            sender.setTitle("再生", for: .normal)
+            bkbutton.isEnabled = true
+            fwbutton.isEnabled = true
+        }
+    }
+    
+    
 }
 
