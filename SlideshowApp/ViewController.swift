@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //画像領域を設定する
+    @IBOutlet weak var imagespace: UIImageView!
+    
+    // ボタンを接続
+    @IBOutlet weak var bkbutton: UIButton!
+    @IBOutlet weak var autobutton: UIButton!
+    @IBOutlet weak var fwbutton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
