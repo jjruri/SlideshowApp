@@ -17,9 +17,13 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-Re-PTJ">
                                 <rect key="frame" x="50" y="64" width="314" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="MM1-EY-xsX"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CCG-Fo-EAT" appends="YES" id="yG4-Hg-6SG"/>
+                                </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="MMB-t7-HnO">
                                 <rect key="frame" x="50" y="264" width="314" height="30"/>
@@ -62,12 +66,50 @@
                     </view>
                     <connections>
                         <outlet property="bkbutton" destination="yRw-tN-DIY" id="Nki-H4-xEm"/>
+                        <outlet property="fwbutton" destination="g6D-hr-bOp" id="OMP-4L-G29"/>
                         <outlet property="imagespace" destination="XkV-Re-PTJ" id="3iF-br-GvP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="CCG-Fo-EAT">
+                    <connections>
+                        <segue destination="mT9-SK-G10" kind="show" id="afU-0d-Ay7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="JHH-39-cFP">
+            <objects>
+                <viewController id="mT9-SK-G10" customClass="imageViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RqD-Ev-Kg0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAf-BA-KUR">
+                                <rect key="frame" x="0.0" y="20" width="414" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="c2r-fY-4ul"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SAf-BA-KUR" firstAttribute="leading" secondItem="V6k-kb-xRR" secondAttribute="leading" id="8G1-Re-yB7"/>
+                            <constraint firstItem="V6k-kb-xRR" firstAttribute="trailing" secondItem="SAf-BA-KUR" secondAttribute="trailing" id="9sH-6U-EJN"/>
+                            <constraint firstItem="SAf-BA-KUR" firstAttribute="top" secondItem="V6k-kb-xRR" secondAttribute="top" constant="20" id="ctl-QO-9q0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V6k-kb-xRR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fCN-8g-DF2"/>
+                    <connections>
+                        <outlet property="imagespace2" destination="SAf-BA-KUR" id="fI6-Md-HTG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MK-oR-Jt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="113"/>
         </scene>
     </scenes>
 </document>

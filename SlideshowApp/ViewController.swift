@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //戻るボタンを設定する
     @IBAction func back(_ sender: UIButton) {
         if slidenum == 0 {
             slidenum = slidestate.count - 1
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
 
-/*
+
     //自動再生停止ボタン用のタイマーを用意する
        var timer: Timer!
        
@@ -83,13 +83,13 @@ class ViewController: UIViewController {
        //自動再生/停止が押された時の設定
     @IBAction func autostop(_ sender: UIButton) {
         if timer == nil {
-            self.timer =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(autoslide(_timer:)), userInfo: nil, repeats: true)
+            timer =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(autoslide(_timer:)), userInfo: nil, repeats: true)
             sender.setTitle("停止", for: .normal)
             bkbutton.isEnabled = false
             fwbutton.isEnabled = false
         }
         else {
-            self.timer.invalidate()
+            timer.invalidate()
             timer = nil
             sender.setTitle("再生", for: .normal)
             bkbutton.isEnabled = true
@@ -97,6 +97,20 @@ class ViewController: UIViewController {
         }
     }
     
-    */
+    //画像をタップした時の挙動をつくる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectimage: imageViewController = segue.destination as! imageViewController
+        selectimage.slidenum2 = slidenum
+     if timer == nil {
+     }
+     else {
+         timer.invalidate()
+         timer = nil
+         autobutton.setTitle("再生", for: .normal)
+         bkbutton.isEnabled = true
+         fwbutton.isEnabled = true
+     }
+     }
+
 }
 
