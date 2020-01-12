@@ -40,12 +40,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         slideskip(a: 0)
-        autobutton.setTitle("再生/停止", for: .normal)
+        //autobutton.setTitle("再生/停止", for: .normal)
     }
 
     
     //進むボタンを設定する
-    @IBAction func nextimg(_ sender: UIButton) {
+    @IBAction func next(_ sender: UIButton) {
         if slidenum == slidestate.count - 1  {
             slideskip(a: 0)
         }
@@ -54,7 +54,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func bkimg(_ sender: UIButton) {
+    
+    @IBAction func back(_ sender: UIButton) {
         if slidenum == 0 {
             slidenum = slidestate.count - 1
             imagespace.image = slidestate[slidenum]
@@ -64,6 +65,8 @@ class ViewController: UIViewController {
         }
     }
     
+
+/*
     //自動再生停止ボタン用のタイマーを用意する
        var timer: Timer!
        
@@ -94,6 +97,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    */
 }
 
