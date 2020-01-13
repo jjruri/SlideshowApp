@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var autobutton: UIButton!
     @IBOutlet weak var fwbutton: UIButton!
     
-    //スライド用変数を用意
+    //スライド用変数を用意した
     var slidenum:Int = 0
     let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
     
