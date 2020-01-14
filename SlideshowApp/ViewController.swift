@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     //スライド用変数を用意した
     var slidenum:Int = 0
-    let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
+    let slidestate = [UIImage(named: "image1.jpg")!,UIImage(named: "image2.jpg")!,UIImage(named: "image3.jpeg")!]
     var slidemax:Int = 0
     
     //スライド用メソッドを用意

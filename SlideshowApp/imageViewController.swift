@@ -13,7 +13,7 @@ class imageViewController: UIViewController {
     @IBOutlet weak var imagespace2: UIImageView!
     
     var slidenum2:Int = 0
-    let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
+    let slidestate = [UIImage(named: "image1.jpg")!,UIImage(named: "image2.jpg")!,UIImage(named: "image3.jpeg")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
