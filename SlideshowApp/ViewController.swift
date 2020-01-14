@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     //スライド用変数を用意した
     var slidenum:Int = 0
     let slidestate = [UIImage(named: "image1")!,UIImage(named: "image2")!,UIImage(named: "image3")!]
+    var slidemax:Int = 0
     
     //スライド用メソッドを用意
     func slideskip(a:Int){
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        slidemax = slidestate.count - 1
         slideskip(a: 0)
         autobutton.setTitle("再生/停止", for: .normal)
     }
